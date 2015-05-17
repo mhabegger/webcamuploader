@@ -12,7 +12,7 @@ def upload_cam_images(cam, img_path, del_after_upload = True):
     path, name = os.path.split(img_path)
     name, ext = os.path.splitext(name)
     current_cam_path = '{0}/{1}{2}'.format(cam['name'], 'current', ext)
-    dated_cam_path = '{0}/{1}{2}'.format(cam['name'], time.strftime("%Y/%m/%d/%H%M"), ext)
+    dated_cam_path = '{0}/{1}{2}'.format(cam['name'], time.strftime("%Y/%m/%d/%H%M", time.localtime()), ext)
 
     upload_public_file(settings.AWS_BUCKET, dated_cam_path, img_path)
     # Label and upload current

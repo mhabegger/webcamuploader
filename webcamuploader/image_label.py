@@ -7,7 +7,7 @@ import time
 
 def label_image(cam, img_path, out_path):
     """Adds a text label onto a jpeg image"""
-    text = '{0}  -  {1}'.format(cam['title'], time.strftime("%d.%m.%Y %H:%M"))
+    text = '{0}  -  {1}'.format(cam['title'], time.strftime("%d.%m.%Y %H:%M", time.localtime()))
     img = Image.open(img_path)
     draw = ImageDraw.Draw(img)
     font = ImageFont.truetype("webcamuploader/font/OpenSans-Semibold.ttf", 14)

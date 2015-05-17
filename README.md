@@ -11,14 +11,25 @@ Create a copy of the settings.dist.py named settings.py. Set the different value
 The name given to the camera will also be used as a prefix when uploading the image
 to amazon S3.
 
-Install python and pip
+Install python, pip and other dependencies
 
     sudo apt-get install python
     sudo apt-get install python-pip
+    sudo apt-get install python-dev
+    sudo apt-get install libjpeg-dev
+    sudo apt-get install zlib1g-dev
+    sudo apt-get install libpng12-dev
+    sudo apt-get install libfreetype6-dev
 
 Install the python requirements
 
     pip install -U -r pip_requirements.txt
+    
+Update Timezone
+
+    echo "Europe/Zurich" | sudo tee /etc/timezone
+    sudo dpkg-reconfigure --frontend noninteractive tzdata
+    sudo apt-get install ntp    
 
 ## Usage
 
