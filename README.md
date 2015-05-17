@@ -11,6 +11,15 @@ Create a copy of the settings.dist.py named settings.py. Set the different value
 The name given to the camera will also be used as a prefix when uploading the image
 to amazon S3.
 
+Install python and pip
+
+    sudo apt-get install python
+    sudo apt-get install python-pip
+
+Install the python requirements
+
+    pip install -U -r pip_requirements.txt
+
 ## Usage
 
     $ python webcamuploader
