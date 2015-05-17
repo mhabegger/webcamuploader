@@ -14,7 +14,7 @@ AWS_ACCESS_KEY = ''
 AWS_SECRET_KEY = ''
 AWS_BUCKET = 'bucket.name'
 
-CAMS = [{'name': 'nameofcamera',
+CAMS = [{'name': 'nameofcamera', 'title': 'Title for Image Name',
          'settings': {
              'type': 'logitech',
              'username': 'logitech_portal_username',

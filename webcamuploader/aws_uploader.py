@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import settings
+import image_label
 import boto
 from boto.s3.key import Key
 import time
@@ -13,8 +14,12 @@ def upload_cam_images(cam, img_path, del_after_upload = True):
     current_cam_path = '{0}/{1}{2}'.format(cam['name'], 'current', ext)
     dated_cam_path = '{0}/{1}{2}'.format(cam['name'], time.strftime("%Y/%m/%d/%H%M"), ext)
 
-    upload_public_file(settings.AWS_BUCKET, current_cam_path, img_path)
     upload_public_file(settings.AWS_BUCKET, dated_cam_path, img_path)
+    # Label and upload current
+    current_path = 'current.jpg'
+    image_label.label_image(cam, img_path, current_path)
+    upload_public_file(settings.AWS_BUCKET, current_cam_path, current_path)
+    os.unlink(current_path)
 
     if del_after_upload:
         os.unlink(img_path)

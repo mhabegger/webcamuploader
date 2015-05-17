@@ -30,9 +30,11 @@ Once as current.jpg and once as yyyy/mm/dd/hhmm.jpg
 
 ### CronJob
 
-Use the following Cronjob line to set a recurrent job that uploads the iamges.
+Use the following Cronjob line to set a recurrent job that uploads the images.
+If you cloned the repo into ubuntu's home directory, the default command to run the script would be
+`python /home/ubuntu/webcamuploader/webcamuploader`
 
-    $ TODO
+    */5  * * * * python /home/ubuntu/webcamuploader/webcamuploader > /dev/null
     
 ## Contributors
 
